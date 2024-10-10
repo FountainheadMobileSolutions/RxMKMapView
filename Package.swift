@@ -1,11 +1,11 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "RxMKMapView",
-    platforms: [.iOS(.v9)],
+    platforms: [.iOS(.v9), .macOS(.v13)],
     products: [
         .library(
             name: "RxMKMapView",
@@ -20,7 +20,10 @@ let package = Package(
     targets: [
         .target(
             name: "RxMKMapView",
-            dependencies: ["RxSwift", "RxCocoa"],
+            dependencies: [
+		.product(name: "RxSwift", package: "RxSwift"),
+		.product(name: "RxCocoa", package: "RxSwift"),
+	    ],
             path: "Sources",
             exclude: [])
     ]
