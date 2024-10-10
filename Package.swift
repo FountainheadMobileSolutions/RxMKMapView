@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/ReactiveX/RxSwift",
+            url: "https://github.com/FountainheadMobileSolutions/RxSwift",
             .upToNextMajor(from: "6.0.0")
         )
     ],
